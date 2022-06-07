@@ -1,0 +1,7 @@
+description = Non-expired entitlement
+expiration = 2040-01-01
+username = nebelung
+username = balinese
+username = serengeti
+username = cheetoh
+username = oJosazuLEs
