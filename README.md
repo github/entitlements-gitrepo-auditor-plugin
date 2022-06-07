@@ -8,7 +8,7 @@
 
 Your `entitlements-app` config `config/entitlements.yaml` runs through ERB interpretation automatically. You can extend your entitlements configuration to load plugins like so:
 
-```
+```ruby
 <%-
   unless ENV['CI_MODE']
     begin
@@ -27,7 +27,7 @@ Your `entitlements-app` config `config/entitlements.yaml` runs through ERB inter
 
 You can then define `lib/entitlements-and-plugins` like so:
 
-```
+```ruby
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
@@ -48,7 +48,7 @@ Any plugins defined in `lib/entitlements-and-plugins` will be loaded and used at
 
 You can add automatic auditing to a separate GitRepo by enabling the following `entitlements.yaml` config:
 
-```
+```ruby
 <%-
     # NOTE: GITREPO_SSH_KEY must be base64 encoded.
     sshkey = ENV.fetch("GITREPO_SSH_KEY")
