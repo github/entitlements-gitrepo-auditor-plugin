@@ -2,10 +2,7 @@ PATH
   remote: .
   specs:
     entitlements-gitrepo-auditor-plugin (0.1.1)
-      concurrent-ruby (= 1.1.9)
-      contracts (= 0.16.0)
-      net-ldap (~> 0.17.0)
-      optimist (= 3.0.0)
+      entitlements (= 0.1.8)
 
 GEM
   remote: https://rubygems.org/
@@ -105,7 +102,6 @@ PLATFORMS
 
 DEPENDENCIES
   contracts-rspec (= 0.1.0)
-  entitlements (= 0.1.8)
   entitlements-gitrepo-auditor-plugin!
   rake (= 13.0.6)
   rspec (= 3.8.0)

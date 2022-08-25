@@ -12,13 +12,9 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/github/entitlements-gitrepo-auditor-plugin"
   s.executables = %w[]
 
-  s.add_dependency "concurrent-ruby", "= 1.1.9"
-  s.add_dependency "contracts", "= 0.16.0"
-  s.add_dependency "net-ldap", "~> 0.17.0"
-  s.add_dependency "optimist", "= 3.0.0"
+  s.add_dependency "entitlements", "0.1.8"
 
   s.add_development_dependency "contracts-rspec", "= 0.1.0"
-  s.add_development_dependency "entitlements", "0.1.8"
   s.add_development_dependency "rake", "= 13.0.6"
   s.add_development_dependency "rspec", "= 3.8.0"
   s.add_development_dependency "rspec-core", "= 3.8.0"
