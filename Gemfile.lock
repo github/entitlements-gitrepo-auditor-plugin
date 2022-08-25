@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    entitlements-gitrepo-auditor-plugin (0.1.0)
+    entitlements-gitrepo-auditor-plugin (0.1.1)
       concurrent-ruby (= 1.1.9)
       contracts (= 0.16.0)
       net-ldap (~> 0.17.0)
