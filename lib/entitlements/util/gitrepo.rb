@@ -79,7 +79,11 @@ module Entitlements
       Contract String, String => nil
       def commit(dir, commit_message)
         validate_git_repository!(dir)
-        git(dir, ["commit", "-m", commit_message])
+        begin
+          git(dir, ["commit", "-m", commit_message])
+        rescue Entitlements::Util::GitRepo::CommandError
+          logger.info "No changes to git repository"
+        end
         nil
       end
 
