@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.executables = %w[]
 
   s.add_dependency "entitlements", "0.2.0.gcf53e66"
+  s.add_dependency "contracts", "0.17"
 
   s.add_development_dependency "rake", "= 13.0.6"
   s.add_development_dependency "rspec", "= 3.8.0"

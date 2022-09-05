@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     entitlements-gitrepo-auditor-plugin (0.2.0)
+      contracts (= 0.17)
       entitlements (= 0.2.0.gcf53e66)
 
 GEM
@@ -16,6 +17,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     concurrent-ruby (1.1.9)
+    contracts (0.17)
     crack (0.4.5)
       rexml
     diff-lcs (1.5.0)
