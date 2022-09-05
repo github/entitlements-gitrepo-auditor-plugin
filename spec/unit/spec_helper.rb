@@ -34,18 +34,6 @@ require "entitlements"
 require_relative "../../lib/entitlements/auditor/gitrepo"
 require_relative "../../lib/entitlements/util/gitrepo"
 
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  SimpleCov::Formatter::ERBFormatter
-]
-SimpleCov.start do
-  # don't show specs as missing coverage for themselves
-  add_filter "/spec/"
-
-  # don't analyze coverage for gems
-  add_filter "/vendor/gems/"
-end
-
 def fixture(path)
   File.expand_path(File.join("fixtures", path.sub(%r{\A/+}, "")), File.dirname(__FILE__))
 end
