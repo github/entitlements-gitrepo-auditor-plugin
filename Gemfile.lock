@@ -3,7 +3,7 @@ PATH
   specs:
     entitlements-gitrepo-auditor-plugin (0.2.0)
       contracts (= 0.17)
-      entitlements (= 0.2.0.gcf53e66)
+      entitlements (= 0.2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -22,7 +22,7 @@ GEM
       rexml
     diff-lcs (1.5.0)
     docile (1.4.0)
-    entitlements (0.2.0.gcf53e66)
+    entitlements (0.2.0)
       concurrent-ruby (= 1.1.9)
       faraday (~> 2.0)
       net-ldap (~> 0.17)

@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/github/entitlements-gitrepo-auditor-plugin"
   s.executables = %w[]
 
-  s.add_dependency "entitlements", "0.2.0.gcf53e66"
+  s.add_dependency "entitlements", "0.2.0"
   s.add_dependency "contracts", "0.17"
 
   s.add_development_dependency "rake", "= 13.0.6"
