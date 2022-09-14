@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    entitlements-gitrepo-auditor-plugin (0.2.0)
+    entitlements-gitrepo-auditor-plugin (0.2.1)
       contracts (= 0.17)
       entitlements (= 0.2.0)
 

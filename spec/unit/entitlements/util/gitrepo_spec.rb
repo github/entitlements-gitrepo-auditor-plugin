@@ -39,6 +39,13 @@ describe Entitlements::Util::GitRepo do
       expect(subject).to receive(:git).with(directory, ["commit", "-m", "My commit message"])
       expect(subject.commit(directory, "My commit message")).to be nil
     end
+
+    it "skips the commit if it receives a command error" do
+      allow(subject).to receive(:validate_git_repository!)
+      expect(subject).to receive(:git).with(directory, ["commit", "-m", "My commit message"]).and_raise(Entitlements::Util::GitRepo::CommandError)
+      expect(logger).to receive(:info).with("No changes to git repository")
+      expect(subject.commit(directory, "My commit message")).to be nil
+    end
   end
 
   describe "#configure" do
