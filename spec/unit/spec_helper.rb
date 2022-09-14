@@ -20,7 +20,6 @@ end
 
 require "base64"
 require "contracts"
-require "contracts/rspec"
 require "json"
 require "rspec"
 require "rspec/support"
@@ -34,18 +33,6 @@ require "entitlements"
 # REQUIRE YOUR PLUGIN DIRECTORIES HERE
 require_relative "../../lib/entitlements/auditor/gitrepo"
 require_relative "../../lib/entitlements/util/gitrepo"
-
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  SimpleCov::Formatter::ERBFormatter
-]
-SimpleCov.start do
-  # don't show specs as missing coverage for themselves
-  add_filter "/spec/"
-
-  # don't analyze coverage for gems
-  add_filter "/vendor/gems/"
-end
 
 def fixture(path)
   File.expand_path(File.join("fixtures", path.sub(%r{\A/+}, "")), File.dirname(__FILE__))
@@ -125,6 +112,19 @@ module MyLetDeclarations
   let(:entitlements_config_file) { fixture("config.yaml") }
   let(:entitlements_config_hash) { nil }
   let(:logger) { Entitlements.dummy_logger }
+end
+
+module Contracts
+  module RSpec
+    module Mocks
+      def instance_double(klass, *args)
+        super.tap do |double|
+          allow(double).to receive(:is_a?).with(klass).and_return(true)
+          allow(double).to receive(:is_a?).with(ParamContractError).and_return(false)
+        end
+      end
+    end
+  end
 end
 
 RSpec.configure do |config|
