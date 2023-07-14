@@ -38,6 +38,7 @@ module Entitlements
         @repo = repo
         @sshkey = sshkey
         @github = "git@github.com:"
+        @tmpdir_prefix = ENV.fetch("ENTITLEMENTS_TMPDIR_PREFIX", "/data/entitlements_deploys")
       end
 
       # Run "git add" on a file.
@@ -206,7 +207,7 @@ module Entitlements
           # else custom that might be going on in the environment. Turn off prompts for the SSH key for
           # github.com being trusted or not, only use the provided key as the identity, and ignore any
           # ~/.ssh/config file the user running this might have set up.
-          tempdir = Dir.mktmpdir
+          tempdir = Dir.mktmpdir(nil, @tmpdir_prefix)
           File.open(File.join(tempdir, "key"), "w") { |f| f.write(sshkey) }
           File.open(File.join(tempdir, "ssh"), "w") do |f|
             f.puts "#!/bin/sh"
