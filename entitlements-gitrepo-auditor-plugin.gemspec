@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
   s.name = "entitlements-gitrepo-auditor-plugin"
   s.version = File.read("VERSION").chomp
-  s.summary = "Entitlements GitRepo Auditor"
+  s.summary = "Entitlements GitRepo Auditor - testing ci"
   s.description = ""
   s.authors = ["GitHub, Inc. Security Ops"]
   s.email = "opensource+entitlements-app@github.com"
