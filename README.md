@@ -2,6 +2,8 @@
 
 [![acceptance](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/acceptance.yml/badge.svg)](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/acceptance.yml) [![test](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/test.yml/badge.svg)](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/test.yml) [![lint](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/lint.yml/badge.svg)](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/lint.yml) [![coverage](https://img.shields.io/badge/coverage-100%25-success)](https://img.shields.io/badge/coverage-100%25-success) [![style](https://img.shields.io/badge/code%20style-rubocop--github-blue)](https://github.com/github/rubocop-github)
 
+TEST
+
 `entitlements-gitrepo-auditor-plugin` is an [entitlements-app](https://github.com/github/entitlements-app) plugin allowing further auditing capabilities in entitlements by writing each deploy log to a separate GitHub repo.
 
 ## Usage
