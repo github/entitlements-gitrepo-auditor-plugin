@@ -207,7 +207,11 @@ module Entitlements
           # else custom that might be going on in the environment. Turn off prompts for the SSH key for
           # github.com being trusted or not, only use the provided key as the identity, and ignore any
           # ~/.ssh/config file the user running this might have set up.
+
+          # if the @tmpdir_prefix doesn't exist, create it
+          FileUtils.mkdir_p(@tmpdir_prefix) unless File.directory?(@tmpdir_prefix)
           tempdir = Dir.mktmpdir(nil, @tmpdir_prefix)
+
           File.open(File.join(tempdir, "key"), "w") { |f| f.write(sshkey) }
           File.open(File.join(tempdir, "ssh"), "w") do |f|
             f.puts "#!/bin/sh"
