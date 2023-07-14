@@ -168,6 +168,9 @@ describe Entitlements::Util::GitRepo do
       allow(exitstatus).to receive(:exitstatus).and_return(0)
 
       begin
+        expect(FileUtils).to receive(:mkdir_p)
+          .and_return(true)
+
         tempdir = Dir.mktmpdir
         allow(Dir).to receive(:mktmpdir).and_return(tempdir)
 
