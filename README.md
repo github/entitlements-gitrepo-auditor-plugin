@@ -1,6 +1,6 @@
 # entitlements-gitrepo-auditor-plugin
 
-[![acceptance](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/acceptance.yml/badge.svg)](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/acceptance.yml) [![test](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/test.yml/badge.svg)](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/test.yml) [![lint](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/lint.yml/badge.svg)](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/lint.yml) [![coverage](https://img.shields.io/badge/coverage-100%25-success)](https://img.shields.io/badge/coverage-100%25-success) [![style](https://img.shields.io/badge/code%20style-rubocop--github-blue)](https://github.com/github/rubocop-github)
+[![acceptance](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/acceptance.yml/badge.svg)](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/acceptance.yml) [![test](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/test.yml/badge.svg)](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/test.yml) [![lint](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/lint.yml/badge.svg)](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/lint.yml) [![build](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/build.yml/badge.svg)](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/build.yml) [![release](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/gem.yml/badge.svg)](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/gem.yml) [![codeql](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/github/entitlements-gitrepo-auditor-plugin/actions/workflows/codeql-analysis.yml) [![coverage](https://img.shields.io/badge/coverage-100%25-success)](https://img.shields.io/badge/coverage-100%25-success) [![style](https://img.shields.io/badge/code%20style-rubocop--github-blue)](https://github.com/github/rubocop-github)
 
 `entitlements-gitrepo-auditor-plugin` is an [entitlements-app](https://github.com/github/entitlements-app) plugin allowing further auditing capabilities in entitlements by writing each deploy log to a separate GitHub repo.
 
@@ -71,3 +71,13 @@ auditors:
 ```
 
 At the end of each `entitlements-app` run, the `entitlements-gitrepo-auditor-plugin` will write a commit to the repo defined above with the details of the deployment.
+
+## Release 🚀
+
+To release a new version of this Gem, do the following:
+
+1. Update the version number in the [`lib/version.rb`](lib/version.rb) file
+2. Run `bundle install` to update the `Gemfile.lock` file with the new version
+3. Commit your changes, push them to GitHub, and open a PR
+
+Once your PR is approved and the changes are merged, a new release will be created automatically by the [`release.yml`](.github/workflows/gem.yml) workflow. The latest version of the Gem will be published to the GitHub Package Registry and RubyGems.

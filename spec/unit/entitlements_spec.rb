@@ -259,7 +259,7 @@ describe Entitlements do
       expect(logger).to receive(:debug).with("Audit Auditor 1 completed successfully")
       expect(logger).to receive(:debug).with("Audit Auditor 2 completed successfully")
 
-      expect { described_class.execute(actions: actions) }.not_to raise_error
+      expect { described_class.execute(actions:) }.not_to raise_error
     end
 
     it "returns without error with no auditors configured" do
@@ -278,7 +278,7 @@ describe Entitlements do
 
       expect(logger).not_to receive(:debug)
 
-      expect { described_class.execute(actions: actions) }.not_to raise_error
+      expect { described_class.execute(actions:) }.not_to raise_error
     end
 
     it "raises when setup of an auditor fails" do
@@ -292,7 +292,7 @@ describe Entitlements do
       expect(auditor2).not_to receive(:setup)
       expect(auditor2).not_to receive(:commit)
 
-      expect { described_class.execute(actions: actions) }.to raise_error(exc)
+      expect { described_class.execute(actions:) }.to raise_error(exc)
     end
 
     it "raises (but runs other auditors) when an auditor fails" do
@@ -332,7 +332,7 @@ describe Entitlements do
       allow(logger).to receive(:error)
       expect(logger).to receive(:error).with("Audit Auditor 1 failed: RuntimeError Boom")
 
-      expect { described_class.execute(actions: actions) }.to raise_error(exc)
+      expect { described_class.execute(actions:) }.to raise_error(exc)
     end
 
     it "raises when a provider fails and there are no auditors" do
@@ -352,7 +352,7 @@ describe Entitlements do
 
       expect(logger).not_to receive(:debug)
 
-      expect { described_class.execute(actions: actions) }.to raise_error(exc)
+      expect { described_class.execute(actions:) }.to raise_error(exc)
     end
 
     it "raises (but runs the auditors) when a provider fails" do
@@ -391,7 +391,7 @@ describe Entitlements do
       expect(logger).to receive(:debug).with("Audit Auditor 1 completed successfully")
       expect(logger).to receive(:debug).with("Audit Auditor 2 completed successfully")
 
-      expect { described_class.execute(actions: actions) }.to raise_error(exc)
+      expect { described_class.execute(actions:) }.to raise_error(exc)
     end
 
     it "raises the provider's exception when a provider and auditor both fail" do
@@ -431,7 +431,7 @@ describe Entitlements do
       expect(logger).to receive(:debug).with("Audit Auditor 2 completed successfully")
       allow(logger).to receive(:error) # Stack trace
 
-      expect { described_class.execute(actions: actions) }.to raise_error(exc)
+      expect { described_class.execute(actions:) }.to raise_error(exc)
     end
 
     it "raises and logs a message when multiple auditors fail" do
@@ -472,7 +472,7 @@ describe Entitlements do
       expect(logger).to receive(:error).with("Audit Auditor 2 failed: RuntimeError Boom Boom")
       allow(logger).to receive(:error) # Stack trace
 
-      expect { described_class.execute(actions: actions) }.to raise_error(exc)
+      expect { described_class.execute(actions:) }.to raise_error(exc)
     end
   end
 

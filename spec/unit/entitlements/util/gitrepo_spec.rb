@@ -6,7 +6,7 @@ describe Entitlements::Util::GitRepo do
 
   let(:directory) { "/tmp/asdlkfjafdiejwroiwejfalskdfjdsklf" }
   let(:logger) { instance_double(Logger) }
-  let(:subject) { described_class.new(repo: "kittens/fluffy", sshkey: "xyz123", logger: logger) }
+  let(:subject) { described_class.new(repo: "kittens/fluffy", sshkey: "xyz123", logger:) }
 
   describe "#add" do
     it "executes the command" do
