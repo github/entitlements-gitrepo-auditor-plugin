@@ -26,7 +26,7 @@ module Entitlements
         @repo = Entitlements::Util::GitRepo.new(
           repo: config["repo"],
           sshkey: Base64.decode64(config["sshkey"]),
-          logger: logger
+          logger:
         )
         @repo.github = config["github_override"] if config["github_override"]
         @repo.send(operation, checkout_directory)
@@ -59,10 +59,10 @@ module Entitlements
         %w[update_files delete_files].each do |m|
           send(
             m.to_sym,
-            action_hash: action_hash,
-            successful_actions: successful_actions,
-            sync_changes: sync_changes,
-            valid_changes: valid_changes
+            action_hash:,
+            successful_actions:,
+            sync_changes:,
+            valid_changes:
           )
         end
 

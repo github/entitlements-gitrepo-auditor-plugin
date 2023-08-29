@@ -287,10 +287,10 @@ describe Entitlements::Auditor::GitRepo do
         valid_changes = {}
 
         subject.send(:update_files,
-          action_hash: action_hash,
-          successful_actions: successful_actions,
-          sync_changes: sync_changes,
-          valid_changes: valid_changes
+          action_hash:,
+          successful_actions:,
+          sync_changes:,
+          valid_changes:
         )
 
         expect(sync_changes).to eq({})
@@ -343,10 +343,10 @@ describe Entitlements::Auditor::GitRepo do
         valid_changes = {}
 
         subject.send(:update_files,
-          action_hash: action_hash,
-          successful_actions: successful_actions,
-          sync_changes: sync_changes,
-          valid_changes: valid_changes
+          action_hash:,
+          successful_actions:,
+          sync_changes:,
+          valid_changes:
         )
 
         expect(sync_changes).to eq(
@@ -420,10 +420,10 @@ describe Entitlements::Auditor::GitRepo do
           .with("Entitlements::Auditor::GitRepo: Valid change (create dc=net/dc=kittens/ou=Groups/cn=group3) queued")
 
         subject.send(:update_files,
-          action_hash: action_hash,
-          successful_actions: successful_actions,
-          sync_changes: sync_changes,
-          valid_changes: valid_changes
+          action_hash:,
+          successful_actions:,
+          sync_changes:,
+          valid_changes:
         )
 
         expect(sync_changes).to eq(
@@ -561,10 +561,10 @@ describe Entitlements::Auditor::GitRepo do
           .with("Entitlements::Auditor::GitRepo: Valid change (update dc=net/dc=kittens/ou=Groups/cn=group5) queued")
 
         subject.send(:update_files,
-          action_hash: action_hash,
-          successful_actions: successful_actions,
-          sync_changes: sync_changes,
-          valid_changes: valid_changes
+          action_hash:,
+          successful_actions:,
+          sync_changes:,
+          valid_changes:
         )
 
         expect(sync_changes).to eq(
@@ -695,10 +695,10 @@ describe Entitlements::Auditor::GitRepo do
           .with("Entitlements::Auditor::GitRepo: Valid change (delete dc=net/dc=kittens/ou=Groups/cn=group5) queued")
 
         subject.send(:update_files,
-          action_hash: action_hash,
-          successful_actions: successful_actions,
-          sync_changes: sync_changes,
-          valid_changes: valid_changes
+          action_hash:,
+          successful_actions:,
+          sync_changes:,
+          valid_changes:
         )
 
         expect(sync_changes).to eq(
@@ -759,10 +759,10 @@ describe Entitlements::Auditor::GitRepo do
         .with("Entitlements::Auditor::GitRepo: Sync change (delete dc=net/dc=kittens/ou=extra/cn=extragroup) required")
 
       subject.send(:delete_files,
-        action_hash: action_hash,
-        successful_actions: successful_actions,
-        sync_changes: sync_changes,
-        valid_changes: valid_changes
+        action_hash:,
+        successful_actions:,
+        sync_changes:,
+        valid_changes:
       )
 
       expect(sync_changes).to eq(
