@@ -71,3 +71,13 @@ auditors:
 ```
 
 At the end of each `entitlements-app` run, the `entitlements-gitrepo-auditor-plugin` will write a commit to the repo defined above with the details of the deployment.
+
+## Release 📦
+
+To publish a new release / version of the Gem, do the following:
+
+1. Open a PR with your changes
+2. Update the version in the [`lib/version.rb`](lib/version.rb) file
+3. Get your PR approved
+4. Merge
+5. Upon merging, the [`release`](.github/workflows/gem.yml) workflow will run automatically and publish a new version of this Gem to RubyGems and GitHub Packages
