@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     entitlements-gitrepo-auditor-plugin (0.4.0)
-      contracts (= 0.17)
-      entitlements-app (= 0.3.0)
+      contracts (~> 0.17)
+      entitlements-app (~> 0.3)
 
 GEM
   remote: https://rubygems.org/
