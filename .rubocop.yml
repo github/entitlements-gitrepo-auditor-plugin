@@ -3,6 +3,7 @@ inherit_gem:
     - config/default.yml
 
 AllCops:
+  NewCops: disable
   SuggestExtensions: false
   DisplayCopNames: true
   TargetRubyVersion: 3.1
