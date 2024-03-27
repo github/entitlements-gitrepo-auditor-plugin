@@ -52,7 +52,7 @@ jobs:
 
   acceptance-suite:
     needs: changes
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-xl
     name: runner / acceptance-tests
     permissions:
       contents: read
