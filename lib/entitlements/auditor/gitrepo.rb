@@ -330,7 +330,7 @@ module Entitlements
         end
 
         member_array = if config["person_dn_format"]
-          group.member_strings.map { |ms| config["person_dn_format"].gsub("%KEY%", ms).downcase }
+                         group.member_strings.map { |ms| config["person_dn_format"].gsub("%KEY%", ms).downcase }
         else
           group.member_strings.map(&:downcase)
         end
