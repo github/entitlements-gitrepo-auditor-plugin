@@ -18,7 +18,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      - uses: ruby/setup-ruby@f26937343756480a8cb3ae1f623b9c8d89ed6984 # pin@v1.196.0
+      - uses: ruby/setup-ruby@28c4deda893d5a96a6b2d958c5b47fc18d65c9d3 # pin@v1.213.0
         with:
           bundler-cache: true
 
