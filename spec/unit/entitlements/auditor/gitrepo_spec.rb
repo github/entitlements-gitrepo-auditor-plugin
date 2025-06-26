@@ -230,15 +230,15 @@ describe Entitlements::Auditor::GitRepo do
     let(:group4) { instance_double(Entitlements::Models::Group) }
     let(:group4_dn) { "cn=group4,ou=Groups,dc=kittens,dc=net" }
     let(:group4_members) { Set.new(["uid=tabby,dc=kittens,dc=net"]) }
-    let(:group4_metadata) { { } }
+    let(:group4_metadata) { {} }
     let(:group5) { instance_double(Entitlements::Models::Group) }
     let(:group5_dn) { "cn=group5,ou=Groups,dc=kittens,dc=net" }
     let(:group5_members) { Set.new(["uid=coon,dc=kittens,dc=net"]) }
-    let(:group5_metadata) { { } }
+    let(:group5_metadata) { {} }
     let(:group6) { instance_double(Entitlements::Models::Group) }
     let(:group6_dn) { "cn=group6,ou=Groups,dc=kittens,dc=net" }
     let(:group6_members) { Set.new(["uid=tabby,dc=kittens,dc=net", "uid=coon,dc=kittens,dc=net"]) }
-    let(:group6_metadata) { { } }
+    let(:group6_metadata) { {} }
     let(:action1) { instance_double(Entitlements::Models::Action) }
     let(:action2) { instance_double(Entitlements::Models::Action) }
     let(:action3) { instance_double(Entitlements::Models::Action) }
@@ -810,7 +810,7 @@ describe Entitlements::Auditor::GitRepo do
     end
 
     it "returns a static string if there is metadata" do
-      allow(group).to receive(:metadata).and_return({ "team_id" => 6, "team_name" => "team_name"})
+      allow(group).to receive(:metadata).and_return({ "team_id" => 6, "team_name" => "team_name" })
       expect(subject.send(:metadata_strings_as_text, group)).to eq("metadata_team_id=6\nmetadata_team_name=team_name\n")
     end
   end
