@@ -174,7 +174,7 @@ describe Entitlements::Util::GitRepo do
         tempdir = Dir.mktmpdir
         allow(Dir).to receive(:mktmpdir).and_return(tempdir)
 
-        expect(Open3).to receive(:capture3).with({"GIT_SSH"=>"#{tempdir}/ssh"}, "git pet kittens", chdir: directory)
+        expect(Open3).to receive(:capture3).with({ "GIT_SSH" => "#{tempdir}/ssh" }, "git pet kittens", chdir: directory)
           .and_return(["Your output here", "", exitstatus])
         expect(logger).to receive(:debug).with("Execute: git pet kittens")
 

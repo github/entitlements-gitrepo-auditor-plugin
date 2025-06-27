@@ -29,7 +29,9 @@ module Entitlements
           logger:
         )
         @repo.github = config["github_override"] if config["github_override"]
+        # rubocop:disable GitHub/AvoidObjectSendWithDynamicMethod
         @repo.send(operation, checkout_directory)
+        # rubocop:enable GitHub/AvoidObjectSendWithDynamicMethod
         @repo.configure(checkout_directory, config["git_name"], config["git_email"])
         logger.debug "Directory #{checkout_directory} prepared"
       end
@@ -56,6 +58,7 @@ module Entitlements
         commitable_actions = actions_with_membership_change(actions)
         action_hash = commitable_actions.map { |action| [action.dn, action] }.to_h
 
+        # rubocop:disable GitHub/AvoidObjectSendWithDynamicMethod
         %w[update_files delete_files].each do |m|
           send(
             m.to_sym,
@@ -65,6 +68,7 @@ module Entitlements
             valid_changes:
           )
         end
+        # rubocop:enable GitHub/AvoidObjectSendWithDynamicMethod
 
         # If there is anything out-of-sync and the provider did not throw an exception, create
         # a special sync commit to update things.
