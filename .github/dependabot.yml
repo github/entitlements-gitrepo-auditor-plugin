@@ -26,7 +26,6 @@ updates:
         patterns: ["*"]
     schedule:
       interval: "weekly"
-    reviewers: ["github/sae-reviewers"]
 
   - package-ecosystem: "docker"
     directory: "/"
@@ -36,7 +35,6 @@ updates:
         patterns: ["*"]
     schedule:
       interval: "weekly"
-    reviewers: ["github/sae-reviewers"]
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -47,7 +45,6 @@ updates:
       - dependency-name: "github/internal-actions"
     schedule:
       interval: "weekly"
-    reviewers: ["github/sae-reviewers"]
 
   - package-ecosystem: "pip"
     directory: "/"
@@ -56,7 +53,6 @@ updates:
     groups:
       python-packages:
         patterns: ["*"]
-    reviewers: ["github/sae-reviewers"]
 
   - package-ecosystem: "gomod"
     directory: "/"
@@ -65,4 +61,3 @@ updates:
     groups:
       go-packages:
         patterns: ["*"]
-    reviewers: ["github/sae-reviewers"]
