@@ -22,36 +22,36 @@ multi-ecosystem-groups:
 
 updates:
   - package-ecosystem: "bundler"
-    multi-ecosystem-groups: "all"
+    multi-ecosystem-group: "all"
     vendor: true
     directory: "/"
     registries: ["rubygems-github-packages"]
     patterns: ["*"]
 
   - package-ecosystem: "docker"
-    multi-ecosystem-groups: "all"
+    multi-ecosystem-group: "all"
     directory: "/"
     registries: ["ghcr"]
     patterns: ["*"]
 
   - package-ecosystem: "github-actions"
-    multi-ecosystem-groups: "all"
+    multi-ecosystem-group: "all"
     directory: "/"
     patterns: ["*"]
     ignore:
       - dependency-name: "github/internal-actions"
 
   - package-ecosystem: "pip"
-    multi-ecosystem-groups: "all"
+    multi-ecosystem-group: "all"
     directory: "/"
     patterns: ["*"]
 
   - package-ecosystem: "gomod"
-    multi-ecosystem-groups: "all"
+    multi-ecosystem-group: "all"
     directory: "/"
     patterns: ["*"]
 
   - package-ecosystem: npm
-    multi-ecosystem-groups: "all"
+    multi-ecosystem-group: "all"
     directory: "/"
     patterns: ["*"]
