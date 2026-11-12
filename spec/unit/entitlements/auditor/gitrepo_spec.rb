@@ -311,6 +311,9 @@ describe Entitlements::Auditor::GitRepo do
         file3 = File.join(checkout_directory, "dc=net", "dc=kittens", "ou=Groups", "cn=group3")
         allow(File).to receive(:file?).with(file3).and_return(false)
 
+        expect(logger).to receive(:warn)
+          .with("Entitlements::Auditor::GitRepo: Sync change (create dc=net/dc=kittens/ou=Groups/cn=group3) required")
+
         sync_changes = {}
         valid_changes = {}
 
