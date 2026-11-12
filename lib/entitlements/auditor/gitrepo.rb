@@ -207,9 +207,6 @@ module Entitlements
             logger.warn "Sync change (update #{filename}) required"
             sync_changes[filename] = group_expected_contents
           end
-        elsif group.member_strings.empty?
-          # The group does not currently exist in the file system nor is it created in the
-          # provider because it has no members. We can skip over this case.
         else
           logger.warn "Sync change (create #{filename}) required"
           sync_changes[filename] = group_expected_contents
