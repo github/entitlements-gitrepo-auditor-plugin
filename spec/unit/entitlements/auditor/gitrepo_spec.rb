@@ -280,8 +280,8 @@ describe Entitlements::Auditor::GitRepo do
         group2_contents = group2_members.sort.join("\n") + "\n" + group2_metadata_string
         allow(File).to receive(:read).with(file2).and_return(group2_contents)
 
-        # Testing that an empty group with no corresponding audit file does not result in sync changes.
-        allow(File).to receive(:file?).with(file3).and_return(false)
+        allow(File).to receive(:file?).with(file3).and_return(true)
+        allow(File).to receive(:read).with(file3).and_return("# No members\n" + group3_metadata_string)
 
         sync_changes = {}
         valid_changes = {}
@@ -294,6 +294,34 @@ describe Entitlements::Auditor::GitRepo do
         )
 
         expect(sync_changes).to eq({})
+        expect(valid_changes).to eq({})
+      end
+    end
+
+    context "with an empty group that has no audit file" do
+      let(:calc_hash) { { group3_dn => group3 } }
+      let(:action_hash) { {} }
+      let(:successful_actions) { Set.new }
+
+      it "creates the audit file" do
+        allow(Entitlements::Data::Groups::Calculated).to receive(:to_h).and_return(calc_hash)
+        allow(group3).to receive(:member_strings).and_return(Set.new)
+        allow(group3).to receive(:metadata).and_return(group3_metadata)
+
+        file3 = File.join(checkout_directory, "dc=net", "dc=kittens", "ou=Groups", "cn=group3")
+        allow(File).to receive(:file?).with(file3).and_return(false)
+
+        sync_changes = {}
+        valid_changes = {}
+
+        subject.send(:update_files,
+          action_hash:,
+          successful_actions:,
+          sync_changes:,
+          valid_changes:
+        )
+
+        expect(sync_changes).to eq("dc=net/dc=kittens/ou=Groups/cn=group3" => "# No members\n" + group3_metadata_string)
         expect(valid_changes).to eq({})
       end
     end
